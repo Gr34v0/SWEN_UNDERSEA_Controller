@@ -21,7 +21,7 @@ public class Knowledge {
 	
 	private Knowledge() {
 		timer = new Timer();
-		timer.schedule(battery, null);
+		timer.schedule(battery, 0);
 	}
 
 	/** UUV*/
