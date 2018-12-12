@@ -23,7 +23,7 @@ public class PlannerMax extends Planner {
 		//analyse configuration
 		for (Integer index : Knowledge.getInstance().PMCResultsMap.keySet()){
 			PMCResult result = Knowledge.getInstance().PMCResultsMap.get(index);
-			if(Knowledge.getInstance().getBattery() >= 200/2){
+			if(Knowledge.getInstance().getBattery() >= 200){
 				if ( (result.getReq1Result()>MIN_READINGS) && 
 					 (result.getReq2Result()<MAX_ENERGY)  &&
 					 ( result.getCost() < bestCost) 
