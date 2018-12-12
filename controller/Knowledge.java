@@ -43,7 +43,7 @@ public class Knowledge {
 	public boolean analysisRequired = false;
 	
 	private Timer timer;
-	private BatteryController battery;
+	private BatteryController battery = new BatteryController();
 
 	
 	public static Knowledge getInstance(){

@@ -30,15 +30,15 @@ public class MainController {
 
 
 		//PMC-based controller
-	    Monitor monitor  	= new MonitorPMC();
-	    Analyser analyser	= new AnalyserPMC();
-	    Planner planner		= new PlannerPMC();
-	    Executor executor	= new ExecutorPMC();
+//	    Monitor monitor  	= new MonitorPMC();
+//	    Analyser analyser	= new AnalyserPMC();
+//	    Planner planner		= new PlannerPMC();
+//	    Executor executor	= new ExecutorPMC();
 		
-//		Monitor monitor  	= new MonitorMax();
-//	    Analyser analyser	= new AnalyserMax();
-//	    Planner planner		= new PlannerMax();
-//	    Executor executor	= new ExecutorMax();
+		Monitor monitor  	= new MonitorMax();
+	    Analyser analyser	= new AnalyserMax();
+	    Planner planner		= new PlannerMax();
+	    Executor executor	= new ExecutorMax();
 		
 		//CT-based controller
 //	    Monitor monitor  	= new MonitorCT();
