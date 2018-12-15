@@ -22,7 +22,7 @@ public class PlannerCustom extends Planner {
 	
 		//analyse configuration
 		for (Integer index : Knowledge.getInstance().PMCResultsMap.keySet()){
-			
+			//TODO: sorting and utility function
 		}
 		
 

@@ -51,7 +51,7 @@ public class Knowledge {
 	//Index saved for accessing pmc results from executor
 	public int bestIndex;
 	
-	public Map<Integer, CustomConfig> CustomConfigMap;
+	public List<CustomConfig> CustomConfigList;
 
 	
 	public static Knowledge getInstance(){
@@ -70,6 +70,10 @@ public class Knowledge {
 	
 	public void setBestIndex(int newIndex){
 		bestIndex = newIndex;
+	}
+	
+	public void addCustomConfig(CustomConfig cc){
+		CustomConfigList.add(cc);
 	}
 	
 	public void setUUVspeed (double s){

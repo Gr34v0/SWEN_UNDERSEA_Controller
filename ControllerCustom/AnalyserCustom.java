@@ -41,6 +41,9 @@ public class AnalyserCustom extends Analyser {
 		Knowledge.getInstance().PMCResultsMap.clear();		
 		
 		//For all configurations run QV and populate RQVResultArray
+		
+		//TODO: come up with data to store and sort by
+		
 		for (int CSC=1; CSC<NUM_OF_SENSOR_CONFIGS; CSC++){
 			for (int sp=10; sp<=40; sp++){
 
@@ -57,16 +60,12 @@ public class AnalyserCustom extends Analyser {
 				arguments[7]	= CSC;
 				arguments[8]	= sp/10.0;
 				
-				
-			
-	
-				
 //				double req1result 			= prismResult.get(0);
 //				double req2result 			= prismResult.get(1);
 				double cost					= 0;//1 * req2result + 20/(sp/10);
 				
 				//4) store configuration results
-				Knowledge.getInstance().addResult(index, new PMCResult(CSC, sp/10.0, req1result, req2result, cost));
+				Knowledge.getInstance().addCustomConfig(cc);
 			}
 		}		
 		
