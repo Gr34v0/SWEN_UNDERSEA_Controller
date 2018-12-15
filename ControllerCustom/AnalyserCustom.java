@@ -72,14 +72,14 @@ public class AnalyserCustom extends Analyser {
 					
 				}
 
-				cc.setSensorCost(totalSensorCost);
+				cc.setSensorCost(totalSensorHertz);
 				
 				cc.setArg6_1(1);
 				cc.setArg7_CSC(CSC);
 				cc.setArg8_SPover10(sp/10);
 
-				double cost = Math.pow(cc.getSensorCost, 1.5) + Math.pow(sp/10, 2);
-				double perf = cc.getSensorCost + sp/10;
+				double cost = Math.pow(cc.getSensorCost(), 1.5) + Math.pow(sp/10, 2);
+				double perf = cc.getSensorCost() + sp/10;
 
 				cc.setUtil( perf/cost );
 				
