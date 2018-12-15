@@ -42,9 +42,11 @@ public class Knowledge {
 	/** flag showning whether analysis is required*/
 	public boolean analysisRequired = false;
 	
+	//Timer for the fake batter
 	private Timer timer;
 	private BatteryController battery = new BatteryController();
 	
+	//Index saved for accessing pmc results from executor
 	public int bestIndex;
 
 	

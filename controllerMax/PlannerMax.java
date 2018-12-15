@@ -41,8 +41,6 @@ public class PlannerMax extends Planner {
 					bestCost 	= result.getCost();
 					bestIndex	= index;
 					Knowledge.getInstance().setBestIndex(bestIndex);
-					
-					
 				}
 			}
 		}

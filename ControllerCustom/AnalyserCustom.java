@@ -4,13 +4,9 @@ import java.util.List;
 
 import auxiliary.Utility;
 import controller.Knowledge;
-import controllerPMC.prism.PMCResult;
-import controllerPMC.prism.PrismAPI;
 import controller.Analyser;
 
 public class AnalyserCustom extends Analyser {
-	/** PRISM instance */
-	PrismAPI prism;
 
 	/** Name of model file */
 	String modelFileName;
