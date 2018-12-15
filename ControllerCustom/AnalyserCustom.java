@@ -53,7 +53,7 @@ public class AnalyserCustom extends Analyser {
 			for (int sp=10; sp<=40; sp++){
 
 				int index 	= ((CSC-1)*21)+(sp-20);
-				int totalSensorHertz;
+				int totalSensorHertz=0;
 				
 				CustomConfig cc = new CustomConfig();
 				for (UUVSensor uuvSensor : Knowledge.getInstance().sensorsMap.values()){

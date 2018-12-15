@@ -47,5 +47,8 @@ public class CustomConfig {
 	public void setUtil(double i){
 		util = i;
 	}
+	public double getUtil(){
+		return util;
+	}
 	
 }

@@ -1,29 +1,28 @@
 package ControllerCustom;
 
-import java.util.Random;
-
 import controller.Knowledge;
 import controller.Planner;
-import controllerPMC.prism.PMCResult;
+import ControllerCustom.Tools.*;
 
 public class PlannerCustom extends Planner {
-
-	//Random rand = new Random(System.currentTimeMillis());
 
 	public PlannerCustom() {
 	}
 
 	@Override
 	public void run() {
-		int bestIndex		= -1;
-		double bestCost 	= Double.MAX_VALUE;
-		double MIN_READINGS = 20;
-		double MAX_ENERGY	= Double.MAX_VALUE;
+		double bestUtil=0;
+		CustomConfig bestConfig;
+		
 	
-		//analyse configuration
-		for (Integer index : Knowledge.getInstance().PMCResultsMap.keySet()){
-			//TODO: sorting and utility function
+		for(CustomConfig index : Knowledge.getInstance().getCustomConfigList()){
+			if(index.getUtil()>bestUtil){
+				bestUtil = index.getUtil();
+				bestConfig = index;
+			}
+
 		}
+			
 		
 
 	}	

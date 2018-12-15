@@ -51,7 +51,7 @@ public class Knowledge {
 	//Index saved for accessing pmc results from executor
 	public int bestIndex;
 	
-	public List<CustomConfig> CustomConfigList;
+	public List<CustomConfig> CustomConfigList = new ArrayList<CustomConfig>();
 
 	
 	public static Knowledge getInstance(){
@@ -59,7 +59,9 @@ public class Knowledge {
 			knowledge = new Knowledge();
 		return knowledge;
 	}
-	
+	public List<CustomConfig> getCustomConfigList(){
+		return CustomConfigList;
+	}
 	public int getBattery(){
 		return battery.getTotal();
 	}
