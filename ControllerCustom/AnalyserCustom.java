@@ -1,6 +1,7 @@
 package ControllerCustom;
 
 import java.util.List;
+import java.math.*;
 
 import auxiliary.Utility;
 import controller.Knowledge;
@@ -52,30 +53,35 @@ public class AnalyserCustom extends Analyser {
 			for (int sp=10; sp<=40; sp++){
 
 				int index 	= ((CSC-1)*21)+(sp-20);
-				
+				int totalSensorHertz;
 				
 				CustomConfig cc = new CustomConfig();
 				for (UUVSensor uuvSensor : Knowledge.getInstance().sensorsMap.values()){
 					
 					String sensorName = uuvSensor.getName();
-					
+					double sensorRate = Knowledge.getInstance().getSensorRate(sensorName);
+
 					CustomSensor customSensor = new CustomSensor(
 							sensorName,
-							Knowledge.getInstance().getSensorRate(sensorName),
+							sensorRate,
 							estimateP(sp/10.0, 5)
 							);
+					totalSensorHertz += sensorRate;
 					cc.addSensor(customSensor); 
 					
 					
 				}
+
+				cc.setSensorCost(totalSensorCost);
 				
 				cc.setArg6_1(1);
 				cc.setArg7_CSC(CSC);
 				cc.setArg8_SPover10(sp/10);
-				cc.setCost(0); //1 * req2result + 20/(sp/10) //hardcoded to 0 for now
-				
-//				double req1result 			= prismResult.get(0);
-//				double req2result 			= prismResult.get(1);
+
+				double cost = Math.pow(cc.getSensorCost, 1.5) + Math.pow(sp/10, 2);
+				double perf = cc.getSensorCost + sp/10;
+
+				cc.setUtil( perf/cost );
 				
 				//4) store configuration results
 				Knowledge.getInstance().addCustomConfig(cc);

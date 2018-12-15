@@ -11,6 +11,7 @@ public class CustomConfig {
 	int mysteryArg7_CSC;
 	int mysteryArg8_SPover10;
 	double cost;
+	double util;
 	
 	
 	public CustomConfig(){
@@ -20,6 +21,16 @@ public class CustomConfig {
 	public void addSensor(CustomSensor sensor){
 		sensorRates.add(sensor);
 	}
+
+
+	public void setSensorCost(double newcost){
+		cost = newcost;
+	}
+
+	public double getSensorCost(){
+		return cost;
+	}
+
 	
 	public void setArg6_1(int i){
 		mysteryArg6_1 = i;
@@ -33,8 +44,8 @@ public class CustomConfig {
 		mysteryArg8_SPover10 = i;
 	}
 	
-	public void setCost(double i){
-		cost = i;
+	public void setUtil(double i){
+		util = i;
 	}
 	
 }
