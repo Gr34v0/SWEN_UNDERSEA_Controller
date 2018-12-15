@@ -40,20 +40,12 @@ public class PlannerMax extends Planner {
 				{
 					bestCost 	= result.getCost();
 					bestIndex	= index;
+					Knowledge.getInstance().setBestIndex(bestIndex);
+					
+					
 				}
 			}
 		}
-		
-		//set new speed
-		double desiredSpeed = Knowledge.getInstance().PMCResultsMap.get(bestIndex).getSpeed();
-		Knowledge.getInstance().setUUVspeed(desiredSpeed);
-		
-		//set new sensor configuration
-//		for (UUVSensor uuvSensor : Knowledge.sensorsMap.values()){
-			Knowledge.getInstance().setSensorState("SENSOR1", Knowledge.getInstance().PMCResultsMap.get(bestIndex).getSensor1());
-			Knowledge.getInstance().setSensorState("SENSOR2", Knowledge.getInstance().PMCResultsMap.get(bestIndex).getSensor2());
-			Knowledge.getInstance().setSensorState("SENSOR3", Knowledge.getInstance().PMCResultsMap.get(bestIndex).getSensor3());
-//		}		
 	}	
 
 }

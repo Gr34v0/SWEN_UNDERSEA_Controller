@@ -44,6 +44,8 @@ public class Knowledge {
 	
 	private Timer timer;
 	private BatteryController battery = new BatteryController();
+	
+	public int bestIndex;
 
 	
 	public static Knowledge getInstance(){
@@ -56,6 +58,13 @@ public class Knowledge {
 		return battery.getTotal();
 	}
 	
+	public int getBestIndex(){
+		return bestIndex;
+	}
+	
+	public void setBestIndex(int newIndex){
+		bestIndex = newIndex;
+	}
 	
 	public void setUUVspeed (double s){
 		uuv.setSpeed(s);

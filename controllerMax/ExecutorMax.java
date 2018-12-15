@@ -10,6 +10,9 @@ public class ExecutorMax extends Executor {
 
 	@Override
 	public void run () {
+		
+		int bestIndex = Knowledge.getInstance().getBestIndex();
+		
 		//set new speed
 		double desiredSpeed = Knowledge.getInstance().PMCResultsMap.get(bestIndex).getSpeed();
 		Knowledge.getInstance().setUUVspeed(desiredSpeed);
