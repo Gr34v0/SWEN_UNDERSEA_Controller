@@ -15,6 +15,8 @@ import controller.uuv.UUVSensor;
 import controllerPMC.prism.PMCResult;
 import controller.BatteryController;
 
+import ControllerCustom.Tools.*;
+
 public class Knowledge {
 	private static Knowledge knowledge = null;	
 	
@@ -48,6 +50,8 @@ public class Knowledge {
 	
 	//Index saved for accessing pmc results from executor
 	public int bestIndex;
+	
+	public Map<Integer, CustomConfig> CustomConfigMap;
 
 	
 	public static Knowledge getInstance(){
