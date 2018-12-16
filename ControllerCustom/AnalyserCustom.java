@@ -60,7 +60,7 @@ public class AnalyserCustom extends Analyser {
 					
 					String sensorName = uuvSensor.getName();
 					double sensorRate = Knowledge.getInstance().getSensorRate(sensorName);
-					int state = Knowledge.getInstance().getSensorState(sensorName);
+					double state = Knowledge.getInstance().getSensorState(sensorName);
 
 					CustomSensor customSensor = new CustomSensor(
 							sensorName,

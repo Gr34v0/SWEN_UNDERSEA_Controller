@@ -1,11 +1,12 @@
 package ControllerCustom.Tools;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class CustomConfig {
 
 	
-	List<CustomSensor> sensorRates;
+	List<CustomSensor> sensors = new ArrayList<CustomSensor>();
 	
 	int mysteryArg6_1;
 	int mysteryArg7_CSC;
@@ -19,7 +20,7 @@ public class CustomConfig {
 	}
 	
 	public void addSensor(CustomSensor sensor){
-		sensorRates.add(sensor);
+		sensors.add(sensor);
 	}
 
 
@@ -49,6 +50,9 @@ public class CustomConfig {
 	}
 	public double getUtil(){
 		return util;
+	}
+	public List<CustomSensor> getSensors(){
+		return sensors;
 	}
 	
 }

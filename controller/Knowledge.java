@@ -52,6 +52,8 @@ public class Knowledge {
 	public int bestIndex;
 	
 	public List<CustomConfig> CustomConfigList = new ArrayList<CustomConfig>();
+	
+	private CustomConfig bestConfig = null;
 
 	
 	public static Knowledge getInstance(){
@@ -59,9 +61,19 @@ public class Knowledge {
 			knowledge = new Knowledge();
 		return knowledge;
 	}
+	
+	public void setBestConfig(CustomConfig best){
+		bestConfig = best;
+	}
+	
+	public CustomConfig getBestConfig(){
+		return bestConfig;
+	}
+	
 	public List<CustomConfig> getCustomConfigList(){
 		return CustomConfigList;
 	}
+	
 	public int getBattery(){
 		return battery.getTotal();
 	}
