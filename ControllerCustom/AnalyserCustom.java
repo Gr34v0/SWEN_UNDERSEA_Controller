@@ -92,10 +92,11 @@ public class AnalyserCustom extends Analyser {
 				cc.setArg7_CSC(CSC);
 				cc.setSpeed(sp/10);
 
-				double cost = Math.pow(cc.getSensorCost(), 1.5) + Math.pow(sp/10, 2);
+				double cost = Math.pow(cc.getSensorCost(), .5) + Math.pow(sp/10, 2);
 				double perf = cc.getSensorCost() + sp;
-
-				cc.setUtil( perf-cost );
+				double util = perf-cost;
+				//if (util< 1)
+				cc.setUtil( util);
 				
 				//4) store configuration results
 				Knowledge.getInstance().addCustomConfig(cc);
