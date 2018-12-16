@@ -17,4 +17,8 @@ public class CustomSensor {
 		return state;
 	}
 
+	public String getSensorName(){
+		return sensorName;
+	}
+
 }

@@ -11,7 +11,18 @@ public class ExecutorCustom extends Executor {
 
 	@Override
 	public void run () {
-		for (UUVSensor uuvSensor : Knowledge.getInstance().sensorsMap.values())
-			Knowledge.getInstance().setSensorState(uuvSensor.getName(),Knowledge.getInstance().getBestConfig().getSensors().);
+		for (UUVSensor uuvSensor : Knowledge.getInstance().sensorsMap.values()) {
+
+			ArrayList<SensorConfig> sensorList = Knowledge.getInstance().getBestConfig().getSensors();
+
+			for(SensorConfig snsrcngf : sensorList){
+				if(snsrcngf.getSensorName().equals(uuvSensor.getName())){
+					Knowledge.getInstance().setSensorState(
+							uuvSensor.getName(),
+							snsrcngf.getState()
+					);
+				}
+			});
+		}
 	}	
 }
