@@ -61,6 +61,9 @@ public class Knowledge {
 			knowledge = new Knowledge();
 		return knowledge;
 	}
+	public void customClear(){
+		CustomConfigList.clear();
+	}
 	
 	public void setBestConfig(CustomConfig best){
 		bestConfig = best;

@@ -15,8 +15,13 @@ public class PlannerCustom extends Planner {
 	
 		for(CustomConfig index : Knowledge.getInstance().getCustomConfigList()){
 			if(index.getUtil()>bestUtil){
-				bestUtil = index.getUtil();
-				Knowledge.getInstance().setBestConfig(index);
+				for(CustomSensor sensor : index.getSensors()){
+					System.out.println(sensor.getState());
+					if(sensor.getState()!=-1){
+						bestUtil = index.getUtil();
+						Knowledge.getInstance().setBestConfig(index);
+					}
+				}
 			}
 
 		}

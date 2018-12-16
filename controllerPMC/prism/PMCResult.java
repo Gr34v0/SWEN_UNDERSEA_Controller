@@ -12,7 +12,7 @@ public class PMCResult{
 	
 	
 	public PMCResult (int CSC, double speed, double r1Result, double r2Result, double cost){
-		this.sensor1 	= CSC%2;
+		this.sensor1 	= CSC%2>0 ? 1:0;
 		this.sensor2 	= CSC%4>1 ? 1 : 0;
 		this.sensor3 	= CSC%8>3 ? 1 : 0;
 		this.speed   	= speed;
