@@ -11,7 +11,7 @@ public class PlannerCustom extends Planner {
 
 	@Override
 	public void run() {
-		double bestUtil=0;
+		double bestUtil=-1;
 	
 		for(CustomConfig index : Knowledge.getInstance().getCustomConfigList()){
 			if(index.getUtil()>bestUtil){

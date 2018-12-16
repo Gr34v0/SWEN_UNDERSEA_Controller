@@ -15,6 +15,7 @@ public class ExecutorCustom extends Executor {
 
 	@Override
 	public void run () {
+		//Knowledge.getInstance().setUUVspeed(Knowledge.getInstance().getBestConfig().getSpeed());
 		for (UUVSensor uuvSensor : Knowledge.getInstance().sensorsMap.values()) {
 
 			List<CustomSensor> sensorList = Knowledge.getInstance().getBestConfig().getSensors();
@@ -28,5 +29,10 @@ public class ExecutorCustom extends Executor {
 				}
 			}
 		}
+		String sp = "SPEED="   + (Knowledge.getInstance().getUUVspeed());
+		String s1 = "SENSOR1=" + (Knowledge.getInstance().getSensorState("SENSOR1"));
+		String s2 = "SENSOR2=" + (Knowledge.getInstance().getSensorState("SENSOR2"));
+		String s3 = "SENSOR3=" + (Knowledge.getInstance().getSensorState("SENSOR3"));
+		command = sp +","+ s1 +","+ s2 +","+ s3;
 	}	
 }
