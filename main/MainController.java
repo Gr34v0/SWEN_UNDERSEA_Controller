@@ -10,6 +10,7 @@ import controllerPMC.ExecutorPMC;
 import controllerPMC.MonitorPMC;
 import controllerPMC.PlannerPMC;
 import controllerMax.*;
+import ControllerCustom.*;
 
 public class MainController {
 
@@ -35,16 +36,22 @@ public class MainController {
 //	    Planner planner		= new PlannerPMC();
 //	    Executor executor	= new ExecutorPMC();
 		
-		Monitor monitor  	= new MonitorMax();
-	    Analyser analyser	= new AnalyserMax();
-	    Planner planner		= new PlannerMax();
-	    Executor executor	= new ExecutorMax();
+//		Monitor monitor  	= new MonitorMax();
+//	    Analyser analyser	= new AnalyserMax();
+//	    Planner planner		= new PlannerMax();
+//	    Executor executor	= new ExecutorMax();
 		
 		//CT-based controller
 //	    Monitor monitor  	= new MonitorCT();
 //	    Analyser analyser	= new AnalyserCT();
 //	    Planner planner		= new PlannerCT();
 //	    Executor executor	= new ExecutorCT();
+		
+		
+		Monitor monitor  	= new MonitorCustom();
+	    Analyser analyser	= new AnalyserCustom();
+	    Planner planner		= new PlannerCustom();
+	    Executor executor	= new ExecutorCustom();
 		
 		//create new controller
 		Controller controller = new Controller(monitor, analyser, planner, executor);

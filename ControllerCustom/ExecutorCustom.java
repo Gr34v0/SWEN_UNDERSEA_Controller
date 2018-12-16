@@ -1,8 +1,12 @@
 package ControllerCustom;
 
+import java.util.List;
+import java.util.ArrayList;
+
 import controller.Executor;
 import controller.Knowledge;
 import controller.uuv.UUVSensor;
+import ControllerCustom.Tools.*;
 
 public class ExecutorCustom extends Executor {
 	
@@ -13,16 +17,16 @@ public class ExecutorCustom extends Executor {
 	public void run () {
 		for (UUVSensor uuvSensor : Knowledge.getInstance().sensorsMap.values()) {
 
-			ArrayList<SensorConfig> sensorList = Knowledge.getInstance().getBestConfig().getSensors();
+			List<CustomSensor> sensorList = Knowledge.getInstance().getBestConfig().getSensors();
 
-			for(SensorConfig snsrcngf : sensorList){
+			for(CustomSensor snsrcngf : sensorList){
 				if(snsrcngf.getSensorName().equals(uuvSensor.getName())){
 					Knowledge.getInstance().setSensorState(
 							uuvSensor.getName(),
-							snsrcngf.getState()
+							(int)snsrcngf.getState()
 					);
 				}
-			});
+			}
 		}
 	}	
 }
