@@ -85,7 +85,7 @@ public class AnalyserCustom extends Analyser {
 					i++;
 					
 				}
-
+				//System.out.println("Cost: "+Integer.toString(totalSensorHertz));
 				cc.setSensorCost(totalSensorHertz);
 				
 				cc.setArg6_1(1);
@@ -94,7 +94,7 @@ public class AnalyserCustom extends Analyser {
 
 				double cost = Math.pow(cc.getSensorCost(), .5) + Math.pow(sp/10, 2);
 				double perf = cc.getSensorCost() + sp;
-				double util = perf-cost;
+				double util = perf/cost;
 				//if (util< 1)
 				cc.setUtil( util);
 				

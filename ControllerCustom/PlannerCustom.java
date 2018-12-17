@@ -11,22 +11,29 @@ public class PlannerCustom extends Planner {
 
 	@Override
 	public void run() {
-		double bestUtil=-1000000000;
-		int minHertz = 1;
 	
+		double bestUtil=-1000000000;
+		int minHertz = 2;
+		
+		
 		for(CustomConfig index : Knowledge.getInstance().getCustomConfigList()){
-			System.out.println(index.getSensorCost());
+			boolean isBroken=false;
+			//System.out.println(index.getSensorCost());
 			if(index.getUtil()>bestUtil&& index.getSensorCost()>=minHertz){
+				//System.out.println("running line 23");
 				for(CustomSensor sensor : index.getSensors()){
 					//System.out.println(sensor.getState());
 					if(sensor.getState()==-1){
+						isBroken = true;
 						break;
 					}
+					continue;
 				}
-				continue;
+				if(!isBroken){
+					bestUtil = index.getUtil();
+					Knowledge.getInstance().setBestConfig(index);	
+				}
 			}
-			bestUtil = index.getUtil();
-			Knowledge.getInstance().setBestConfig(index);
 		}
 	}	
 }

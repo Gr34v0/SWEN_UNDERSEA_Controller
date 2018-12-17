@@ -62,7 +62,7 @@ public class Knowledge {
 		return knowledge;
 	}
 	public void customClear(){
-		CustomConfigList.clear();
+		CustomConfigList = new ArrayList<CustomConfig>();
 	}
 	
 	public void setBestConfig(CustomConfig best){
