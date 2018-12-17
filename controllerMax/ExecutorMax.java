@@ -11,18 +11,18 @@ public class ExecutorMax extends Executor {
 	@Override
 	public void run () {		
 		
-		int bestIndex = Knowledge.getInstance().getBestIndex();
-		
-		//set new speed
-		double desiredSpeed = Knowledge.getInstance().PMCResultsMap.get(bestIndex).getSpeed();
-		Knowledge.getInstance().setUUVspeed(desiredSpeed);
-		
-		//set new sensor configuration
-//				for (UUVSensor uuvSensor : Knowledge.sensorsMap.values()){
-			Knowledge.getInstance().setSensorState("SENSOR1", Knowledge.getInstance().PMCResultsMap.get(bestIndex).getSensor1());
-			Knowledge.getInstance().setSensorState("SENSOR2", Knowledge.getInstance().PMCResultsMap.get(bestIndex).getSensor2());
-			Knowledge.getInstance().setSensorState("SENSOR3", Knowledge.getInstance().PMCResultsMap.get(bestIndex).getSensor3());
-//				}		
+//		int bestIndex = Knowledge.getInstance().getBestIndex();
+//		
+//		//set new speed
+//		double desiredSpeed = Knowledge.getInstance().PMCResultsMap.get(bestIndex).getSpeed();
+//		Knowledge.getInstance().setUUVspeed(desiredSpeed);
+//		
+//		//set new sensor configuration
+////				for (UUVSensor uuvSensor : Knowledge.sensorsMap.values()){
+//			Knowledge.getInstance().setSensorState("SENSOR1", Knowledge.getInstance().PMCResultsMap.get(bestIndex).getSensor1());
+//			Knowledge.getInstance().setSensorState("SENSOR2", Knowledge.getInstance().PMCResultsMap.get(bestIndex).getSensor2());
+//			Knowledge.getInstance().setSensorState("SENSOR3", Knowledge.getInstance().PMCResultsMap.get(bestIndex).getSensor3());
+////				}		
 		
 		//construct command
 		String sp = "SPEED="   + (Knowledge.getInstance().getUUVspeed());

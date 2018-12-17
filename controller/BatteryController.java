@@ -5,7 +5,7 @@ import java.lang.InterruptedException;
 
 public class BatteryController extends TimerTask {
 	
-	private int MAX_LIFE = 200;
+	private int MAX_LIFE = 100;
 	private int total;
 	
 	@Override

@@ -2,6 +2,10 @@ package ControllerCustom;
 
 import controller.Knowledge;
 import controller.Planner;
+import controller.uuv.UUVSensor;
+
+import java.util.List;
+
 import ControllerCustom.Tools.*;
 
 public class PlannerCustom extends Planner {
@@ -12,7 +16,7 @@ public class PlannerCustom extends Planner {
 	@Override
 	public void run() {
 	
-		double bestUtil=-1000000000;
+		double bestUtil=-1000;
 		int minHertz = 2;
 		
 		
@@ -35,5 +39,19 @@ public class PlannerCustom extends Planner {
 				}
 			}
 		}
+//		Knowledge.getInstance().setUUVspeed(Knowledge.getInstance().getBestConfig().getSpeed());
+//		for (UUVSensor uuvSensor : Knowledge.getInstance().sensorsMap.values()) {
+//
+//			List<CustomSensor> sensorList = Knowledge.getInstance().getBestConfig().getSensors();
+//
+//			for(CustomSensor snsrcngf : sensorList){
+//				if(snsrcngf.getSensorName().equals(uuvSensor.getName())){
+//					Knowledge.getInstance().setSensorState(
+//							uuvSensor.getName(),
+//							(int)snsrcngf.getState()
+//					);
+//				}
+//			}
+//		}
 	}	
 }
