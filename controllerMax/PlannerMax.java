@@ -7,9 +7,7 @@ import controller.Planner;
 import controllerPMC.prism.PMCResult;
 
 public class PlannerMax extends Planner {
-
-	//Random rand = new Random(System.currentTimeMillis());
-
+	
 	public PlannerMax() {
 	}
 
@@ -33,10 +31,7 @@ public class PlannerMax extends Planner {
 					bestIndex	= index;
 				}
 			} else{
-				if ( (result.getReq1Result()>MIN_READINGS) //&& 
-						 //(result.getReq2Result()<MAX_ENERGY)  &&
-						 //( result.getCost() < bestCost) 
-							)
+				if (result.getReq1Result()>MIN_READINGS)
 				{
 					bestCost 	= result.getCost();
 					bestIndex	= index;

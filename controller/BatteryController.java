@@ -10,8 +10,7 @@ public class BatteryController extends TimerTask {
 	
 	@Override
 	public void run() {
-		// TODO Auto-generated method stub
-		
+
 		total = 0;
 		
 		while(total < MAX_LIFE)
